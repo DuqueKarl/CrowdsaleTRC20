@@ -5,7 +5,7 @@ contract('MyTokenCrowdsale', function([_, wallet, investor1, investor2]) {
 
   beforeEach(async function () {
     // Token config
-    this.name = "MyToken TRC20";
+    this.name = "My Token TRC20";
     this.symbol = "MYT";
     this.decimals = 18;
 

@@ -1,6 +1,6 @@
 const MyToken = artifacts.require('MyToken');
 
-contract('DappToken', accounts => {
+contract('MyToken', accounts => {
   const _name = 'My Token TRC20';
   const _symbol = 'MYT';
   const _decimals = 18;
