@@ -9,7 +9,7 @@ module.exports = function(deployer, network, accounts) {
   const _rate = 500;
   const _wallet = accounts[0];
   
-  let token;
+  let token, crowdsale;
   return deployer
     .then(() => {
       return deployer.deploy(MyToken, _name, _symbol, _decimals, _initialSupply);
@@ -18,9 +18,10 @@ module.exports = function(deployer, network, accounts) {
 	  token = instance;
       return deployer.deploy(MyTokenCrowdsale, _rate, _wallet, MyToken.address, _wallet);
     })
-	.then(() => {
-	  token.transferOwnership(MyTokenCrowdsale.address);	  
-      token.approve(MyTokenCrowdsale.address, _initialSupply * 1e+18 );
+	.then((instance) => {
+	  crowdsale = instance;
+	  token.transferOwnership(crowdsale.address);	  
+      token.approve(crowdsale.address, _initialSupply * 10 ** 18 );
 	});		
 
 };
