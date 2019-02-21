@@ -1,8 +1,9 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+//import "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
  * @title ERC20DetailedERC20 token
@@ -10,19 +11,18 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
  * All the operations are done using the smallest and indivisible token unit,
  * just as on Ethereum all the operations are done in wei.
  */
-contract MyToken is ERC20, ERC20Detailed {
+contract MyToken is ERC20, ERC20Detailed, Ownable {
   
-  // using SafeMath for uint256;
-
-  uint8 public constant DECIMALS = 18;
-  uint256 public constant INITIAL_SUPPLY = 15000000 * (10 ** uint256(DECIMALS));
-
-  // Constructor that gives msg.sender all of existing tokens.
-  // We inherited the ERC20Detailed 
-  constructor(string memory _name, string memory _symbol, uint8 _decimals) 
-  ERC20Detailed(_name, _symbol, _decimals)
-  public {
-      _mint(msg.sender, INITIAL_SUPPLY);
+  constructor(
+    string memory _name,
+	string memory _symbol,
+	uint8 _decimals,
+    uint256 _initialSupply
+  ) 
+    ERC20Detailed(_name, _symbol, _decimals)
+    public
+  {
+    _mint(msg.sender, _initialSupply * 10 ** uint256(_decimals));
   }
 
 }
