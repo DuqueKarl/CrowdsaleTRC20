@@ -6,7 +6,7 @@ import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
   //import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/emission/AllowanceCrowdsale.sol";
 
-contract MyTokenCrowdsale is AllowanceCrowdsale {
+contract MyTokenCrowdsale is Crowdsale, AllowanceCrowdsale {
 
   constructor(
     uint256 _rate,
