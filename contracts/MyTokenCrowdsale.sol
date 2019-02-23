@@ -1,9 +1,7 @@
 pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-  //import "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
 import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
-  //import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/emission/AllowanceCrowdsale.sol";
 
 contract MyTokenCrowdsale is Crowdsale, AllowanceCrowdsale {

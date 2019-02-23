@@ -2,11 +2,10 @@ pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
-//import "openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
- * @title ERC20DetailedERC20 token
+ * @title ERC20Detailed token
  * @dev The decimals are only for visualization purposes.
  * All the operations are done using the smallest and indivisible token unit,
  * just as on Ethereum all the operations are done in wei.
